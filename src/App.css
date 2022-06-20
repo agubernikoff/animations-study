@@ -1,38 +1,85 @@
-.App {
+h1 {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.animation-title {
+  opacity: 0.5;
+  color: white;
+  position: absolute;
+  top: 1vw;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mario-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
 }
-
-.App-link {
-  color: #61dafb;
+.mario-sky,
+.mario-grass,
+.mario-road {
+  position: relative;
 }
-
-@keyframes App-logo-spin {
+.mario-sky {
+  background-color: #167bff;
+  height: 60%;
+}
+.mario-grass {
+  background-color: rgb(0, 78, 13);
+  height: 7.5%;
+}
+.mario-road {
+  background-color: rgb(20, 20, 20);
+  height: 12%;
+  width: 150vw;
+}
+.mario-stripe {
+  height: 1%;
+  background-color: yellow;
+}
+.mario-road img {
+  width: 7vw;
+  position: absolute;
+  bottom: 3vw;
+  left: -10vw;
+  z-index: 2;
+}
+#mario,
+#peach,
+#bowser,
+#toad {
+  bottom: 8vw;
+  z-index: 1;
+}
+#mario {
+  animation: mario-drive 3.5s linear infinite;
+}
+#luigi {
+  animation: mario-drive 3.5s linear infinite 1s;
+}
+#bowser {
+  animation: mario-drive 5s linear infinite 1s;
+}
+#peach {
+  animation: mario-drive 4s linear infinite;
+}
+#dk {
+  animation: mario-drive 5s linear infinite;
+}
+#koopa {
+  animation: mario-drive 4.5s linear infinite 1s;
+}
+#toad {
+  animation: mario-drive 4.5s linear infinite;
+}
+#yoshi {
+  animation: mario-drive 3s linear infinite;
+}
+@keyframes mario-drive {
   from {
-    transform: rotate(0deg);
+    transform: translateX(-10vw);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(120vw);
   }
 }
